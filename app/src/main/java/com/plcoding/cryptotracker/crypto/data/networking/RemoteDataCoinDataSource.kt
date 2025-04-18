@@ -11,6 +11,8 @@ import com.plcoding.cryptotracker.crypto.domain.Coin
 import com.plcoding.cryptotracker.crypto.domain.CoinDataSource
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
+import io.ktor.client.request.headers
+import io.ktor.http.HttpHeaders
 
 class RemoteDataCoinDataSource(
     private val httpClient: HttpClient
@@ -19,7 +21,11 @@ class RemoteDataCoinDataSource(
         return safeCall<CoinResponseDto> {
             httpClient.get(
                 urlString = constructUrl("/assets")
-            )
+            ) {
+                headers {
+                    append(HttpHeaders.Authorization, "Bearer d07308dcd285862f5e60558e6376439450f85e0bf3206aa642913281d9ba193c")
+                }
+            }
         }.map { response ->
             response.data.map { it.toCoin() }
         }
