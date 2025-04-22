@@ -6,4 +6,7 @@
     <string name="error_server_error">Server Error\n</string>
     <string name="error_serialization">Error parsing data</string>
     <string name="unknown">Unknown Error has occured</string>
+    <string name="market_cap">Market Cap</string>
+    <string name="price">Price</string>
+    <string name="change_24hr">Change in 24Hr</string>
 </resources>
