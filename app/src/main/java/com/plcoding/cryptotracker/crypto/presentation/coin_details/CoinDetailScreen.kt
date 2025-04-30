@@ -44,7 +44,7 @@ import com.plcoding.cryptotracker.ui.theme.greenBackground
 @Composable
 fun CoinDetailScreen(
     state: CoinListState,
-    modifier: Modifier
+    modifier: Modifier = Modifier
 ) {
     val contentColor = if (isSystemInDarkTheme()) {
         Color.White
